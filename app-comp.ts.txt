@@ -1,0 +1,56 @@
+import { Component } from '@angular/core';
+import {COURSES} from '../db-data';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent 
+{
+    coreCourse=COURSES[0];
+    RxJS = COURSES[1];
+    NgRx = COURSES[2];
+    kursevi=COURSES
+    public izbor=0;
+    SetIzbor(nesto:number)
+    {
+      switch(nesto)
+      {
+      case 1:
+      {
+      this.izbor=1;
+      break;
+      }
+      case 2:
+      {
+      this.izbor=2;
+      break;
+      }
+      case 3:
+      {
+      this.izbor=3;
+      break;
+      }
+      case 4:
+      {
+      this.izbor=4;
+      break;
+      }
+      case 5:
+      {
+      this.izbor=5;
+      break;
+      }
+      default:
+      {
+        this.izbor=0;
+        break;
+      }
+}
+}
+onAppViewed(){
+  console.log("Suzi e e ne")
+}
+
+}

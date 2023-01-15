@@ -1,0 +1,40 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Course, svetle} from '../model/course';
+
+
+@Component({
+  selector: 'app-course-card',
+  templateUrl: './course-card.component.html',
+  styleUrls: ['./course-card.component.css']
+})
+
+export class CourseCardComponent implements OnInit{
+   constructor(){}
+
+  @Input()
+  title:string=""
+
+  @Input()
+  indeks:number=0
+
+  @Input()
+  crs:Course =svetle
+
+  
+
+  ngOnInit(){
+
+  }
+
+  //kako ova za domashna - sakame so event emiter (naoraen vejce primerov)
+  svetle=new EventEmitter<Course>();
+
+  //kako ova za domashna
+  onCrsViewed(){
+    console.log("Svetle e pojaka od suzi")
+    this.svetle.emit(this.crs);
+  }
+  
+}
+
+//od course card komponent sakame da go dobieme elementot - za doma

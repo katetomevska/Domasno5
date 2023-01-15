@@ -1,0 +1,24 @@
+ 
+<p [ngStyle]="{'background-color': '#98f93c'}">course-card works!</p>
+
+<div>
+
+<ng-template #noImg>
+    <p>nema slika</p>
+</ng-template>
+
+<div class="course-title" [ngStyle]="{'background-color': crs.id%2===0 ? '#703cf9' : '#27ffa3'}">
+    {{crs.id+". "+crs.description}}
+</div>
+<img  width="300" alt="Angular Logo" *ngIf="crs.iconUrl; else noImg"
+    src={{crs.iconUrl}}>
+
+
+
+<div class="course-description" [ngStyle]="{'background-color': '#3cdff9'}">
+    
+    {{crs.longDescription}}
+</div>
+
+<button [ngStyle]="{'color':'#fffcfc', 'background-color': '#3cbaf9'}" (click)="onCrsViewed()"   >Click for svetle</button>
+</div>
